@@ -1,13 +1,11 @@
-# Sample Hardhat Project
+# Decentralized Polling Project
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+A decentralized polling system.
 
-Try running some of the following tasks:
+Try it out:
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
 npx hardhat node
-npx hardhat run scripts/deploy.js
+npx hardhat run --network localhost scripts/deploy.js
+npm start
 ```
