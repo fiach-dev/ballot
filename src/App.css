@@ -1,38 +1,392 @@
-.App {
+
+html, body {
+  margin: 0;
+  padding: 0; 
+}
+
+:root {
+  --cardWidth: 40%;
+  --cardHeight: 60%;
+  --cardMargin: 16px;
+}
+.navbar {
+  position: relative;
+  z-index: 999;
+  height: 5vh;
+  width: 100%;
+  background-color: #080023;
+  display: flex;
+  justify-content: center;
+  padding-bottom:0;
+  margin-bottom:0; 
+  
+}
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+}
+
+.walletText{
+  margin:0;
+  color:white;
+  font-size: 1em;
+  font-family: 'Secular One', sans-serif;
+}
+
+.landingContainer {
+  margin-top:0;
+  height: 100vh;
+  width:100vw;
+  background: url('images/test3.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow:auto;
+    
+}
+.centeredContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.landingBoxContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:40vw;
+  height:40vh;
+  padding:1%;
+}
+.mainLandingText {
+  color:white;
+  font-family: 'Rubik Glitch', cursive;
+  font-size: 7em;
+  margin:0;
+}
+
+.topText {
+  color:rgba(155, 153, 153,0.8);
+  font-size: 150%;
+  margin:0;
+}
+
+.subContainer {
+  overflow: hidden;
+  
+}
+.subInner {
+  overflow: hidden;
+
+}
+.subItem {
+  float: left;
+  margin:7%;
+  color:white;
+  font-family: 'Secular One', sans-serif;
+  display: inline-block;
+  position: relative;
+}
+.subItem::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+
+
+}
+.subItem:hover::after{
+  width: 100%; 
+  left: 0; 
+}
+
+.formWrapper {
+  height:100vh;
+  width:100vw;
+  background:#2A006E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formCenter {
+  backdrop-filter: blur(5px);
+  background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
+  position: relative;
+  padding:5%;
+}
+.formTitle{
+  font-family: 'Secular One', sans-serif;
+  color:white;
+  border-left: 5px solid #6102fa;
+  letter-spacing: 2px;
+  padding-left: 2%;
+}
+.pollSubmitForm{
+  overflow: hidden;
+}
+
+.formText {
+  font-family: 'Secular One', sans-serif;
+  color:rgba(155, 153, 153,0.3);
+  margin-left: 2%;
+}
+
+
+.center .inputbox input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid #000;
+  outline: none;
+  -webkit-appearance: none;
+  background: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2em;
+}
+
+.center .inputbox:last-child {
+  margin-bottom: 0;
+}
+.center .inputbox span {
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  font-size: 1em;
+  transition: 0.6s;
+  font-family: sans-serif;
+}
+.center .inputbox input:focus ~ span,
+.center .inputbox input:valid ~ span {
+  transform: translateX(-13px) translateY(-35px);
+  font-size: 1em;
+}
+.center .inputbox [type="button"] {
+  width: 50%;
+  background: #6102fa;
+  color: #fff;
+  border: #fff;
+}
+.center .inputbox:hover [type="button"] {
+  background: linear-gradient(45deg, #6102fa, #080023);
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn-text {
+  color:white;
+  font-family: 'Secular One', sans-serif;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn-change {
+  background:#2A006E;
+  margin: 1%;
+  padding: 1%;
+  border:none;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.btn-change span {
+  transition: all 0.3s;
+}
+
+.btn-change::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255,255,255,0.5);
+  border-bottom-color: rgba(255,255,255,0.5);
+  transform: scale(0.1, 1);
+}
+
+.btn-change:hover span {
+  letter-spacing: 2px;
+  background: rgba(42, 0, 110,0.4);
+  
+  border-top: 1px solid rgba(155, 153, 153,0.8);
+  border-bottom:1px solid rgba(155, 153, 153,0.8);
+}
+.btn-change:hover::before {
+  opacity: 1; 
+  transform: scale(1, 1); 
+}
+.btn-change::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  transition: all 0.3s;
+  
+}
+.btn-change:hover::after {
+  opacity: 0; 
+  transform: scale(0.1, 1);
+}
+
+
+
+.aboutContainer {
+  height:100vh;
+  width:100vw;
+  margin:0;
+  background:#080023;
+  overflow:auto;
+  padding-bottom:0;
+}
+
+.flexbox-container{
+  height:50vh;
+  width:100vw;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  display: flex;
+  flex-flow: wrap;
+  
+}
+.security, .democracy, .control{
+
+}
+.flexbox-item-center{
+  height:40vh;
+  width:30vw;
+  
+  text-align: center;
+}
+
+
+.aboutTop{
+  margin:5%;
+}
+.centeredAbout{
+  text-align: center;
   color: white;
+  margin:2%;
+  font-family: 'Secular One', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.standardText {
+  font-family: 'Secular One', sans-serif;
+  color:white;
+  font-size: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.proDescription{
+  font-family: 'Secular One', sans-serif;
+  color:rgba(155, 153, 153,0.8);
+
+}
+.aboutTitle{
+  font-size: 400%; 
+}
+.aboutSubtext{
+  color:rgba(155, 153, 153,0.8);
+}
+.main-section {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  background: #080023;
+  width:100vw;
+}
+.card {
+  width: var(--cardWidth);
+  height: var(--cardHeight);
+  margin: var(--cardMargin);
+  border: 1px solid rgba(155, 153, 153,0.2);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.pollCreator, .pollTitle {
+  color:white;
+  font-family: 'Secular One', sans-serif;
+  text-align: center;
+}
+.pollTitle{
+  font-size: 150%;
+}
+.pollCreator {
+  font-size: 100%;
+  color:rgba(155, 153, 153,0.8);
+}
+
+.optionContainer {
+  float:left;
+  width:40%;
+  margin-right: 0;
+}
+
+.chartContainer {
+  margin-left: 0;
+  float: right;
+  width:59%;
+  height:100%;
+}
+
+.optionWrapper{
+  
+  
+}
+.pollOption{
+  color:white;
+  padding:2%;
+  font-size: 100%;
+}
+
+.pollOption:hover{
+  font-size:120%;
+}
+
+.githubLink {
+  text-decoration: none;
+  color: rgba(155, 153, 153,0.8);
+}
+
+a {
+  text-decoration: none;
+}
+
+.githubLink:hover {
+  color:white;
+}
+@media only screen and (max-width: 600px) {
+  .standardText{
+    font-size: 80%;
   }
-  to {
-    transform: rotate(360deg);
+  .aboutContainer{
+    height:60vh;
+  }
+  .formWrapper {
+    height:60vh;
   }
 }
+
